@@ -37,7 +37,7 @@ class KFold:
         return self._n_classes
 
     def train(self, model, width, height, channels, n_epochs, batch_size, hdf5_path, patience):
-        val_loss_min = 9.99 # 最適値は不明
+        val_loss_min = 9.99999 # 最適値は不明
         val_loss_over_count = 0
         continuable = True
         for _ in range(n_epochs):
@@ -165,8 +165,8 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--hdf5_path', type=str, default='cifar-10.hdf5')
     parser.add_argument('--patience', type=int, default=5)
-    parser.add_argument('--image_width', type=int, default=28)
-    parser.add_argument('--image_height', type=int, default=28)
+    parser.add_argument('--image_width', type=int, default=32)
+    parser.add_argument('--image_height', type=int, default=32)
     parser.add_argument('--image_channels', type=int, default=3)
     args, _ = parser.parse_known_args()
     main(args)
